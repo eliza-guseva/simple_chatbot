@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat with Bot</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-messages">
+            <!-- Messages will appear here -->
+        </div>
+        
+        <form hx-post="BACKEND_URL:port/chat" 
+              hx-target="#chat-messages" 
+              hx-swap="beforeend"
+              hx-trigger="submit">
+            
+            <input type="text" 
+                   name="message" 
+                   placeholder="Type your message..."
+                   autofocus>
+            
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
